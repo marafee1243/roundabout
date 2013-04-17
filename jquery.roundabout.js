@@ -488,6 +488,13 @@
 			factors.width = (factors.adjustedScale * data.startWidth).toFixed(4);
 			factors.height = (factors.adjustedScale * data.startHeight).toFixed(4);
 
+			// Adding 'active' class to element or li which is on front/displayed
+			if ((info.opacity.min + (info.opacity.diff * factors.scale)).toFixed(2) == 1) { 
+				child.addClass("active");
+			} else { 
+				child.removeClass("active");
+			}
+			
 			// update item
 			child
 				.css({
